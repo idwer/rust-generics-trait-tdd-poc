@@ -14,6 +14,12 @@ impl ProofOfConcept<String, String> for EmptyProofOfConcept {
     }
 }
 
+impl ProofOfConcept<String, Vec<&str>> for EmptyProofOfConcept {
+    fn poc(param: Vec<&str>) -> (String, Vec<&str>) {
+        (String::from("TDD PoC for Vec<&str>"), param)
+    }
+}
+
 #[cfg(test)]
 mod tests_solution {
     use super::*;
@@ -36,6 +42,14 @@ mod tests_solution {
         assert_eq!(
             <EmptyProofOfConcept as ProofOfConcept<String, f64>>::poc(1.5),
             (String::from("TDD PoC for f64"), 3.0)
+        );
+    }
+
+    #[test]
+    fn test_poc_003() {
+        assert_eq!(
+            <EmptyProofOfConcept as ProofOfConcept<String, Vec<&str>>>::poc(vec!["test", "driven", "development"]),
+            (String::from("TDD PoC for Vec<&str>"), vec!["test", "driven", "development"])
         );
     }
 }

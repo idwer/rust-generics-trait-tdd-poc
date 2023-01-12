@@ -10,8 +10,14 @@ fn main() {
             "TDD PoC for String"
         ))
     );
+
     println!(
         "{:?}",
         <EmptyProofOfConcept as ProofOfConcept<String, f64>>::poc(1.5)
+    );
+
+    println!(
+        "{:?}",
+        <EmptyProofOfConcept as ProofOfConcept<String, Vec<&str>>>::poc(vec!["test", "driven", "development"])
     );
 }
