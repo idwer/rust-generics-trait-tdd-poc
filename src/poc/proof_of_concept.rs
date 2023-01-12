@@ -25,7 +25,7 @@ mod tests_solution {
     use super::*;
 
     #[test]
-    fn test_poc_001() {
+    fn test_poc_string() {
         assert_eq!(
             <EmptyProofOfConcept as ProofOfConcept<String, String>>::poc(String::from(
                 "TDD PoC for String"
@@ -38,7 +38,7 @@ mod tests_solution {
     }
 
     #[test]
-    fn test_poc_002() {
+    fn test_poc_f64() {
         assert_eq!(
             <EmptyProofOfConcept as ProofOfConcept<String, f64>>::poc(1.5),
             (String::from("TDD PoC for f64"), 3.0)
@@ -46,7 +46,7 @@ mod tests_solution {
     }
 
     #[test]
-    fn test_poc_003() {
+    fn test_poc_vec_of_borrowed_str() {
         assert_eq!(
             <EmptyProofOfConcept as ProofOfConcept<String, Vec<&str>>>::poc(vec!["test", "driven", "development"]),
             (String::from("TDD PoC for Vec<&str>"), vec!["test", "driven", "development"])
