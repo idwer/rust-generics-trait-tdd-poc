@@ -3,14 +3,14 @@ use crate::poc::traits::ProofOfConcept;
 pub struct EmptyProofOfConcept;
 
 impl ProofOfConcept<String, f64> for EmptyProofOfConcept {
-    fn poc(f: f64) -> (String, f64) {
-        (String::from("TDD PoC for f64"), f * 2.0)
+    fn poc(param: f64) -> (String, f64) {
+        (String::from("TDD PoC for f64"), param * 2.0)
     }
 }
 
 impl ProofOfConcept<String, String> for EmptyProofOfConcept {
-    fn poc(message: String) -> (String, String) {
-        (String::from("TDD PoC for String"), message.clone())
+    fn poc(param: String) -> (String, String) {
+        (String::from("TDD PoC for String"), param.clone())
     }
 }
 
