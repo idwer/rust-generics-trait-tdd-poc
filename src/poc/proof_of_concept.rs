@@ -10,7 +10,7 @@ impl ProofOfConcept<String, f64> for EmptyProofOfConcept {
 
 impl ProofOfConcept<String, String> for EmptyProofOfConcept {
     fn poc(param: String) -> (String, String) {
-        (String::from("TDD PoC for String"), param.clone())
+        (String::from("TDD PoC for String"), param)
     }
 }
 
